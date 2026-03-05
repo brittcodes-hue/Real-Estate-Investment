@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+==========================================================================
+【AI HANDOVER NOTE】
+1. DESIGN PHILOSOPHY:
+   - Trust-First Real Estate Aesthetic: This design system prioritizes credibility, warmth, and professionalism for a real estate investment company serving vulnerable homeowners facing foreclosure alongside savvy investors. The visual language balances empathy with authority.
+   - Neo-Professional Minimalism: Clean surfaces with strategic use of the brand's signature red gradient (#7a1518 → #c94b4e → #e8a0a2) to create visual hierarchy without overwhelming users in distress. White space conveys clarity and breathing room during stressful decision-making.
+   - Community-Centered Physicality: Subtle shadows and borders create tangible, trustworthy surfaces. Cards feel like solid foundations—metaphorically reinforcing GMASH's promise to help preserve homes and build equity.
+
+2. TYPOGRAPHY:
+   - Montserrat (Headings): Bold, geometric sans-serif chosen for its authoritative yet approachable character. The slightly condensed letterforms convey efficiency and professionalism—critical for investor credibility. Weight range (400-800) allows dramatic hierarchy in hero sections.
+   - Open Sans (Body): Highly legible humanist sans-serif optimized for readability in long-form content (foreclosure guides, blog posts). Its open apertures and friendly curves soften technical real estate language, making complex processes feel accessible.
+   - IBM Plex Mono (Data/Metrics): Used sparingly for phone numbers, addresses, and numerical data (property values, timelines). Monospace reinforces precision and trustworthiness in financial contexts.
+
+3. COLOR SYSTEM:
+   - Brand Foundation (Hue 358°): The GMASH logo's deep red (#7a1518) anchors the entire palette at Hue 358° (near pure red). This hue conveys strength, urgency (appropriate for foreclosure help), and passion for community service. The gradient to #c94b4e and #e8a0a2 provides warmth without aggression.
+   - Semantic Mapping: --brand (deep red) maps to --primary for CTAs and key actions. --accent uses the mid-tone #c94b4e for hover states and secondary emphasis. --ring uses the blush #e8a0a2 for focus states, maintaining brand consistency while ensuring accessibility.
+   - Foreclosure-Sensitive Palette: --destructive uses a distinct orange-red (Hue 15°) to differentiate urgent warnings from brand red. --success (green, Hue 150°) celebrates positive outcomes (saved homes, completed renovations). --warning (amber, Hue 45°) for time-sensitive information without panic.
+   - Light Mode Dominance: Given the target audience (homeowners in crisis, professional investors), light mode prioritizes readability and reduces cognitive load. Background is pure white (#ffffff per brand spec) with deep red text for maximum contrast.
+
+4. USAGE GUIDE:
+   - Layout: Full-width hero sections with centered content containers (max-width: 1280px) for desktop. Mobile-first responsive design with hamburger menu under 768px. Sticky navbar with visible phone number (720.663.7346) ensures constant access to help.
+   - Card System: Use --card with subtle borders (--border) and soft shadows for service previews, testimonials, and blog posts. Avoid heavy glassmorphism—transparency could undermine trust in financial contexts.
+   - CTA Hierarchy: Primary CTAs ('Get Free Consultation') use --primary background with --primary-foreground text. Secondary CTAs ('See Our Services') use --secondary. Destructive actions (rare, e.g., 'Cancel Consultation') use --destructive.
+   - Empathy in Dark Mode: Dark mode uses warmer, less saturated reds to avoid alarm. Background stays above oklch(0.15) to prevent oppressive darkness for users already under stress.
+   - Accessibility: All text meets WCAG 2.1 AA contrast ratios. Focus rings (--ring) are highly visible. Form validation uses --destructive for errors, --success for confirmations, with clear messaging.
+   - Special Effects: Minimal use of animations—smooth scroll behavior and subtle hover lifts on cards. Avoid flashy effects that could distract from critical information (foreclosure timelines, contact forms).
+   - Foreclosure Page Tone: Use --muted backgrounds for FAQ accordions to soften urgency. --accent for 'Act Now' blocks without panic-inducing red. Include external resource links styled with --secondary to build trust through transparency.
+==========================================================================
+*/
+
+:root {
+  /* Typography */
+  --font-sans: 'Montserrat', 'Open Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  
+  /* Radius */
+  --radius: 0.5rem;
+
+  /* Core UI Tokens */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.15 0.02 358);
+  --card: oklch(0.99 0 0);
+  --card-foreground: oklch(0.15 0.02 358);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 358);
+  --primary: oklch(0.35 0.15 358);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.62 0.12 358);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.96 0.005 358);
+  --muted-foreground: oklch(0.45 0.02 358);
+  --accent: oklch(0.72 0.10 358);
+  --accent-foreground: oklch(0.15 0.02 358);
+  --destructive: oklch(0.55 0.22 15);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.88 0.01 358);
+  --input: oklch(0.88 0.01 358);
+  --ring: oklch(0.82 0.08 358);
+  
+  /* Chart Tokens */
+  --chart-1: oklch(0.35 0.15 358);
+  --chart-2: oklch(0.62 0.12 358);
+  --chart-3: oklch(0.72 0.10 358);
+  --chart-4: oklch(0.82 0.08 358);
+  --chart-5: oklch(0.50 0.18 358);
+  
+  /* Sidebar Tokens */
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: oklch(0.15 0.02 358);
+  --sidebar-primary: oklch(0.35 0.15 358);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.96 0.005 358);
+  --sidebar-accent-foreground: oklch(0.15 0.02 358);
+  --sidebar-border: oklch(0.88 0.01 358);
+  --sidebar-ring: oklch(0.82 0.08 358);
+}
+
+.dark {
+  --background: oklch(0.12 0.01 358);
+  --foreground: oklch(0.92 0.01 358);
+  --card: oklch(0.15 0.015 358);
+  --card-foreground: oklch(0.92 0.01 358);
+  --popover: oklch(0.12 0.01 358);
+  --popover-foreground: oklch(0.92 0.01 358);
+  --primary: oklch(0.62 0.14 358);
+  --primary-foreground: oklch(0.12 0.01 358);
+  --secondary: oklch(0.45 0.10 358);
+  --secondary-foreground: oklch(0.92 0.01 358);
+  --muted: oklch(0.20 0.015 358);
+  --muted-foreground: oklch(0.65 0.02 358);
+  --accent: oklch(0.55 0.12 358);
+  --accent-foreground: oklch(0.92 0.01 358);
+  --destructive: oklch(0.60 0.20 15);
+  --destructive-foreground: oklch(0.92 0.01 358);
+  --border: oklch(0.25 0.02 358);
+  --input: oklch(0.25 0.02 358);
+  --ring: oklch(0.72 0.10 358);
+  
+  /* Chart Tokens */
+  --chart-1: oklch(0.62 0.14 358);
+  --chart-2: oklch(0.55 0.12 358);
+  --chart-3: oklch(0.72 0.10 358);
+  --chart-4: oklch(0.45 0.10 358);
+  --chart-5: oklch(0.68 0.16 358);
+  
+  /* Sidebar Tokens */
+  --sidebar: oklch(0.10 0.01 358);
+  --sidebar-foreground: oklch(0.92 0.01 358);
+  --sidebar-primary: oklch(0.62 0.14 358);
+  --sidebar-primary-foreground: oklch(0.12 0.01 358);
+  --sidebar-accent: oklch(0.20 0.015 358);
+  --sidebar-accent-foreground: oklch(0.92 0.01 358);
+  --sidebar-border: oklch(0.25 0.02 358);
+  --sidebar-ring: oklch(0.72 0.10 358);
+}
+
+@theme inline {
+  /* Shadcn Core Mapping */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Charts Mapping */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar Mapping */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Typography */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  /* Radius */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans min-h-screen;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  code, pre {
+    @apply font-mono;
+  }
+
+  ::selection {
+    @apply bg-primary/20 text-primary;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40;
+  }
+}
