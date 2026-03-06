@@ -179,7 +179,7 @@ export function Layout({ children }: LayoutProps) {
             <div className="space-y-4">
               <img
                 src={IMAGES.GMASH_LOGO_53}
-                alt="GMASH Logo"
+                alt="gmash-logo"
                 className="h-12 w-auto"
               />
               <p className="text-sm text-muted-foreground">

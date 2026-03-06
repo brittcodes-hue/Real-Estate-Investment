@@ -18,7 +18,7 @@
    - IBM Plex Mono (Data/Metrics): Used sparingly for phone numbers, addresses, and numerical data (property values, timelines). Monospace reinforces precision and trustworthiness in financial contexts.
 
 3. COLOR SYSTEM:
-   - Brand Foundation (Hue 358°): The GMASH logo's deep red (#7a1518) anchors the entire palette at Hue 358° (near pure red). This hue conveys strength, urgency (appropriate for foreclosure help), and passion for community service. The gradient to #c94b4e and #e8a0a2 provides warmth without aggression.
+   - Brand Foundation (Hue 358°): The gmash-logo's deep red (#7a1518) anchors the entire palette at Hue 358° (near pure red). This hue conveys strength, urgency (appropriate for foreclosure help), and passion for community service. The gradient to #c94b4e and #e8a0a2 provides warmth without aggression.
    - Semantic Mapping: --brand (deep red) maps to --primary for CTAs and key actions. --accent uses the mid-tone #c94b4e for hover states and secondary emphasis. --ring uses the blush #e8a0a2 for focus states, maintaining brand consistency while ensuring accessibility.
    - Foreclosure-Sensitive Palette: --destructive uses a distinct orange-red (Hue 15°) to differentiate urgent warnings from brand red. --success (green, Hue 150°) celebrates positive outcomes (saved homes, completed renovations). --warning (amber, Hue 45°) for time-sensitive information without panic.
    - Light Mode Dominance: Given the target audience (homeowners in crisis, professional investors), light mode prioritizes readability and reduces cognitive load. Background is pure white (#ffffff per brand spec) with deep red text for maximum contrast.

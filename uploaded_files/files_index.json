@@ -4,10 +4,10 @@
   "tables_source_info": [],
   "images": [
     {
-      "original_name": "GMASH Logo",
-      "file_name": "GMASH Logo.png",
-      "file_path": "/workspace/gmash_website/public/images/GMASH Logo.png",
-      "rel_path": "images/GMASH Logo.png",
+      "original_name": "gmash-logo",
+      "file_name": "gmash-logo.png",
+      "file_path": "/workspace/gmash_website/public/images/gmash-logo.png",
+      "rel_path": "images/gmash-logo.png",
       "file_type": "png",
       "category": "images"
     }
