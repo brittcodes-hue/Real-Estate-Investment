@@ -21,7 +21,7 @@ const App = () => (
       <MotionConfig reducedMotion="user">
         <Toaster />
         <Sonner />
-        <BrowserRouter basename="/Real-Estate-Investment">
+        <BrowserRouter>
           <Layout>
             <Routes>
               <Route path={ROUTE_PATHS.HOME} element={<Home />} />
