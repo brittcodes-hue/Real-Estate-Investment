@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { motion } from 'framer-motion';
 import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { serviceTypes, validateEmail, validatePhone, formatPhoneNumber, type ContactFormData } from '@/lib/index';
+import emailjs from "@emailjs/browser";
 
 interface ContactFormProps {
   defaultServiceType?: string;
@@ -84,9 +85,19 @@ export function ContactForm({ defaultServiceType, className = '' }: ContactFormP
     setSubmitStatus('idle');
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      console.log('Form submitted:', formData);
+      await emailjs.send(
+        "service_pheah7d",
+        "template_gylvhn4",
+        {
+          fullName: formData.fullName,
+          phone: formData.phone,
+          email: formData.email,
+          propertyAddress: formData.propertyAddress,
+          serviceType: formData.serviceType,
+          message: formData.message,
+        },
+        "MiiLe2gQjnfi8KdcL"
+      );
       
       setSubmitStatus('success');
       setFormData({
