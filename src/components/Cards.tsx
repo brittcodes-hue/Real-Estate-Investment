@@ -4,6 +4,7 @@ import { Star } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { springPresets, hoverLift } from '@/lib/motion';
+import { IMAGES } from "@/assets/images";
 
 interface ServiceCardProps {
   title: string;
@@ -97,7 +98,7 @@ export function BlogCard({ title, excerpt, category, date, image }: BlogCardProp
       <Card className="h-full overflow-hidden transition-all duration-200 hover:shadow-lg border-border bg-card">
         <div className="aspect-video w-full overflow-hidden">
           <img
-            src={image}
+            src={IMAGES[image as keyof typeof IMAGES] ?? image}
             alt={title}
             className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
           />
