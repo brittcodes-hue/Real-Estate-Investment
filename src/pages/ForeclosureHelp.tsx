@@ -336,9 +336,9 @@ export default function ForeclosureHelp() {
                     Free foreclosure prevention counseling specifically for Colorado homeowners. Get expert advice on your rights, options, and next steps from local professionals.
                   </p>
                   <Button variant="outline" className="w-full" asChild>
-                    <a href={EXTERNAL_RESOURCES.coloradoHotline} target="_blank" rel="noopener noreferrer">
-                      Visit Colorado Hotline
-                      <ExternalLink className="w-4 h-4 ml-2" />
+                    <a href={EXTERNAL_RESOURCES.coloradoHotline}>
+                      Call Colorado Hotline
+                      <Phone className="w-4 h-4 ml-2" />
                     </a>
                   </Button>
                 </CardContent>
