@@ -42,7 +42,7 @@ export const SOCIAL_LINKS = {
 
 export const EXTERNAL_RESOURCES = {
   hud: 'https://www.hud.gov/topics/avoiding_foreclosure',
-  coloradoHotline: 'https://www.coloradoforeclosurehotline.org',
+  coloradoHotline: 'tel:877-601-4673',
 } as const;
 
 export const formatPhoneNumber = (phone: string): string => {
